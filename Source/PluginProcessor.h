@@ -58,9 +58,8 @@ public:
     float lin_interp(float sample_x, float sample_x1, float inPhase);
 
 private:
-    float mLFOPhase;
     
-    
+    /** parameter declatations*/
     juce::AudioParameterFloat* mDryWetParameter;
     juce::AudioParameterFloat* mDepthParameter;
     juce::AudioParameterFloat* mRateParameter;
@@ -69,6 +68,7 @@ private:
     
     juce::AudioParameterInt* mTypeParameter;
     
+    /** circular buffer data*/
     float mFeedbackLeft;
     float mFeedbackRight;
     
@@ -77,6 +77,10 @@ private:
     
     float* mCircularBufferLeft;
     float* mCircularBufferRight;
+    
+    /** LFO data */
+    float mLFOPhase;
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChorusFlangerAudioProcessor)
 };
